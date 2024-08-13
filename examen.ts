@@ -74,7 +74,7 @@ app.get('/biblioteca/libros/genero/:genero', function (request: Request, respons
 })
 
 // 4. Actualizar información de un libro por id
-// Put: Actualiza un dato con una ubicación específica.
+// PUT: Actualiza un dato con una ubicación específica.
 // RUN: Inserta datos
 app.put('/biblioteca/libros/:id', function (request: Request, response: Response) {
     let titulo = request.body.titulo;
@@ -97,7 +97,7 @@ app.put('/biblioteca/libros/:id', function (request: Request, response: Response
 
 // 5. Eliminar un libro por id
 // DELETE: Eliminar algo en especifico.
-// RUN: Inserta datos.
+// RUN: Inserta la petición de eliminar los datos según el id.
 app.delete('/biblioteca/libros/:id', function (request: Request, response: Response) {
     db.run('DELETE FROM biblioteca WHERE id = ?', [request.params.id], (err) => {
         if (err) {
